@@ -7,8 +7,11 @@ $(document).ready(function() {
     editor = CodeMirror.fromTextArea(document.getElementById("code"), {
         lineNumbers: true,
         mode: "javascript",
-        //theme: "material",
+        theme: "material",
         autoCloseBrackets: true,
+        matchBrackets: true,
+        showCursorWhenSelecting: true,
+        keyMap: "sublime",
 //        viewportMargin: Infinity,
     });
 
@@ -45,7 +48,8 @@ $(document).ready(function() {
     
     function evaluate(cm) {
         if (!hpgl_lib) return false;
-        var hpgl_code = eval(hpgl_lib + cm.getValue() + 'endPathIfNeeded(); view.draw(); output;');
+        var hpgl_code = eval(hpgl_lib + cm.getValue() + 'endPathIfNeeded(); console.log(view); output;');
+        view.draw();
 //        draw(hpgl_code);
         console.log(hpgl_code);
     }

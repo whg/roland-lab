@@ -4,6 +4,13 @@
   <script src="lib/js/jquery.min.js"></script>
   <script src="lib/js/codemirror.js"></script>
   <script src="lib/js/mode/javascript.js"></script>
+  <script src="lib/js/addon/search/searchcursor.js"></script>
+  <script src="lib/js/addon/search/search.js"></script>
+  <script src="lib/js/addon/edit/matchbrackets.js"></script>
+  <script src="lib/js/addon/edit/closebrackets.js"></script>
+  <script src="lib/js/addon/comment/comment.js"></script>
+  <script src="lib/js/keymap/sublime.js"></script>
+
   <script src="lib/js/paper.js"></script>
   <script src="js/roland-lab.js"></script>
   
@@ -19,7 +26,9 @@
     </div>
   
     <div id="editor">
-      <textarea name="code" id="code" rows="" cols="" tabindex=""></textarea>
+      <textarea name="code" id="code" rows="" cols="" tabindex="">
+        rotate(30); rect(10, 10, 50, 50);
+      </textarea>
     </div>
   </div>
 </body>
