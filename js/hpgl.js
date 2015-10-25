@@ -130,7 +130,7 @@ function beginShape() {
     shapeVertices = [];
 }
 
-function endShape() {
+function endShape(close) {
     if (shapeVertices.length < 1) {
         return;
     }
@@ -142,6 +142,17 @@ function endShape() {
         var pt = currentMatrix.transform(p);
         pd(pt.x, pt.y);
     });
+
+    var end;
+    if (close) {
+        end = currentMatrix.transform(shapeVertices[0]);
+        pd(end.x, end.y);
+    }
+    else {
+        end = currentMatrix.transform(shapeVertices[shapeVertices.length-1]);
+    }
+    
+    pu(end.x, end.y);
 
     shapeVertices = [];
 }
